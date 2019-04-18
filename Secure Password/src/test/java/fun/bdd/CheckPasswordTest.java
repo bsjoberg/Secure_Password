@@ -30,4 +30,8 @@ public class CheckPasswordTest {
 		Assert.assertFalse(CheckPassword.isSecure("abcdedfg"));
 	}
 
+	@Test
+	public void should_be_insecure_with_only_numbers() {
+		Assert.assertFalse(CheckPassword.isSecure("12345678"));
+	}
 }

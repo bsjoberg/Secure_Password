@@ -6,7 +6,11 @@ public class CheckPassword {
 		if (password.length() >= 8) { 
 			// Password must have characters and numbers
 			if (hasNumber(password)) {
-				return true;
+				if (hasLetter(password)) {
+					return true;
+				}
+				else
+					return false;
 			}
 			else
 				return false;
@@ -15,6 +19,12 @@ public class CheckPassword {
 			return false;
 	}
 
+	private static boolean hasLetter(String password) {
+		boolean hasLetter = false;
+		hasLetter = password.matches("a-zA-Z");
+		return hasLetter;
+	}
+	
 	private static boolean hasNumber(String password) {
 		boolean hasNumber = false;
 		
